@@ -39,12 +39,12 @@
 
 		    <div class="topo">
 			    <div class="logotipo">
-				    <div style="margin:0px 80px; text-align:center; color:#FFF; font-family:'roboto';" id="home-titulo"><img src="../img/justrun_logo.png" alt="JUST RUN" width="100"></div>
+				    <div style="margin:0px 80px; text-align:center; color:#FFF; font-family:'roboto';" id="favoritos-titulo"><img src="../img/justrun_logo.png" alt="JUST RUN" width="100"></div>
 				</div>
 		    </div>
 
 			<div role="main" class="ui-content" style="text-align:center;">
-				<div class="conteudo" id="home-conteudo">
+				<div class="conteudo" id="favoritos-conteudo">
 					<div style="padding-top:120px; text-align:center; font-size:13px; color:#000;">
 						<img src="../img/ajax-loader.gif" /><br><br>
 						Aguarde carregando...
@@ -53,10 +53,10 @@
 			</div>
 			
 			<div class="botoes-rodape">
-				<div class="botoes-rodape1" id="home-rodape1" style="color:#c30b19;"><i class="fa fa-home" aria-hidden="true"></i>INÍCIO</div>
-				<div class="botoes-rodape2" id="home-rodape2"><i class="fa fa-star-o" aria-hidden="true"></i>FAVORITOS</div>
-				<div class="botoes-rodape3" id="home-rodape3"><i class="fa fa-play-circle-o" aria-hidden="true"></i>TREINOS</div>
-				<div class="botoes-rodape4" id="home-rodape4"><i class="fa fa-cogs" aria-hidden="true"></i>AJUSTES</div>
+				<div class="botoes-rodape1" id="favoritos-rodape1"><i class="fa fa-home" aria-hidden="true"></i>INÍCIO</div>
+				<div class="botoes-rodape2" id="favoritos-rodape2" style="color:#c30b19;"><i class="fa fa-star-o" aria-hidden="true"></i>FAVORITOS</div>
+				<div class="botoes-rodape3" id="favoritos-rodape3"><i class="fa fa-play-circle-o" aria-hidden="true"></i>TREINOS</div>
+				<div class="botoes-rodape4" id="favoritos-rodape4"><i class="fa fa-cogs" aria-hidden="true"></i>AJUSTES</div>
 			</div>
 			
 			<style>
@@ -74,19 +74,19 @@
 				var registrationId = window.localStorage.getItem('registrationId');
 				
 				
-				$('#home-rodape1').click(function(){
+				$('#favoritos-rodape1').click(function(){
+					$.mobile.changePage("home.html", { transition: "fade", changeHash: false });
+				});
+				
+				$('#favoritos-rodape2').click(function(){
 
 				});
 				
-				$('#home-rodape2').click(function(){
-					$.mobile.changePage("favoritos.html", { transition: "fade", changeHash: false });
-				});
-				
-				$('#home-rodape3').click(function(){
+				$('#favoritos-rodape3').click(function(){
 					$.mobile.changePage("treinos.html", { transition: "fade", changeHash: false });
 				});
 				
-				$('#home-rodape4').click(function(){
+				$('#favoritos-rodape4').click(function(){
 					$.mobile.changePage("preferencias.html", { transition: "fade", changeHash: false });
 				});
 				

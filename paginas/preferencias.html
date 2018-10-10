@@ -34,11 +34,9 @@
     <body>
 	    
 	    <div data-role="page">
-
-		    <div class="topo">
+			<div class="topo">
 			    <div class="logotipo">
-				    <div style="min-width:10px; float:left; color:#000; padding:10px 10px; margin:-10px 0px -10px -10px;" id="bt-preferencias-voltar"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
-				    <div style="margin:0px 80px; text-align:center; color:#000; font-family:'roboto';" id="preferencias-titulo"><b>PREFERÊNCIAS<b></div>
+				    <div style="margin:0px 80px; text-align:center; color:#FFF; font-family:'roboto';" id="preferencias-titulo"><img src="../img/justrun_logo.png" alt="JUST RUN" width="100"></div>
 				</div>
 		    </div>
 
@@ -52,12 +50,10 @@
 			</div>
 			
 			<div class="botoes-rodape">
-				<div class="botoes-rodape1" id="preferencias-rodape1"><i class="fa fa-home" aria-hidden="true"></i></div>
-				<div class="botoes-rodape6" id="preferencias-rodape6"><i class="fa fa-newspaper-o" aria-hidden="true"></i></div>
-				<div class="botoes-rodape2" id="preferencias-rodape2"><i class="fa fa-futbol-o" aria-hidden="true"></i></div>
-				<div class="botoes-rodape4" id="preferencias-rodape4"><i class="fa fa-microphone" aria-hidden="true"></i></div>
-				<div class="botoes-rodape5" id="preferencias-rodape5"><i class="fa fa-ticket" aria-hidden="true"></i></div>
-				<div class="botoes-rodape3" id="preferencias-rodape3"><i class="fa fa-cogs" aria-hidden="true" style="color:#f7ba00;"></i></div>
+				<div class="botoes-rodape1" id="preferencias-rodape1"><i class="fa fa-home" aria-hidden="true"></i>INÍCIO</div>
+				<div class="botoes-rodape2" id="preferencias-rodape2"><i class="fa fa-star-o" aria-hidden="true"></i>FAVORITOS</div>
+				<div class="botoes-rodape3" id="preferencias-rodape3"><i class="fa fa-play-circle-o" aria-hidden="true"></i>TREINOS</div>
+				<div class="botoes-rodape4" id="preferencias-rodape4" style="color:#c30b19;"><i class="fa fa-cogs" aria-hidden="true"></i>AJUSTES</div>
 			</div>
 			
 			<script>
@@ -79,23 +75,15 @@
 				});
 				
 				$('#preferencias-rodape2').click(function(){
-					$.mobile.changePage("campeonatos.html", { transition: "fade", changeHash: false });
+					$.mobile.changePage("favoritos.html", { transition: "fade", changeHash: false });
 				});
 				
 				$('#preferencias-rodape3').click(function(){
-
+					$.mobile.changePage("treinos.html", { transition: "fade", changeHash: false });
 				});
 				
 				$('#preferencias-rodape4').click(function(){
-					$.mobile.changePage("gol_home.html", { transition: "fade", changeHash: false });
-				});
-				
-				$('#preferencias-rodape5').click(function(){
-					$.mobile.changePage("cinema_home.html", { transition: "fade", changeHash: false });
-				});
-				
-				$('#preferencias-rodape6').click(function(){
-					$.mobile.changePage("noticias_home.html", { transition: "fade", changeHash: false });
+
 				});
 				
 			</script>

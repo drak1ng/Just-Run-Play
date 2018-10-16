@@ -4,7 +4,7 @@
 	id        = "com.justrunclub.app.beta"
 	versionCode="100" 
 	version   = "1.0.0">
-	<name>Just Run</name>
+	<name>Just Run Beta</name>
 	<description>
 		Just Run
 	</description>

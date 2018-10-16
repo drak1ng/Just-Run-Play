@@ -39,12 +39,13 @@
 
 		    <div class="topo">
 			    <div class="logotipo">
-				    <div style="margin:0px 80px; text-align:center; color:#FFF; font-family:'roboto';" id="favoritos-titulo"><img src="../img/justrun_logo.png" alt="JUST RUN" width="100"></div>
+				    <div style="min-width:10px; float:left; color:#FFF; font-size:25px; padding:10px 10px; margin:-10px 0px -10px -10px;" id="bt-treinos-lista-interno-voltar"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
+				    <div style="margin:0px 80px; text-align:center; color:#FFF; font-family:'roboto';" id="treinos-lista-interno-titulo"><img src="../img/justrun_logo.png" alt="JUST RUN" width="100"></div>
 				</div>
 		    </div>
 
 			<div role="main" class="ui-content" style="text-align:center;">
-				<div class="conteudo" id="favoritos-conteudo">
+				<div class="conteudo" id="treinos-lista-interno-conteudo">
 					<div style="padding-top:120px; text-align:center; font-size:13px; color:#000;">
 						<img src="../img/ajax-loader.gif" /><br><br>
 						Aguarde carregando...
@@ -53,10 +54,10 @@
 			</div>
 			
 			<div class="botoes-rodape">
-				<div class="botoes-rodape1" id="favoritos-rodape1"><i class="fa fa-home" aria-hidden="true"></i>INÍCIO</div>
-				<div class="botoes-rodape2" id="favoritos-rodape2" style="color:#c30b19;"><i class="fa fa-star-o" aria-hidden="true"></i>FAVORITOS</div>
-				<div class="botoes-rodape3" id="favoritos-rodape3"><i class="fa fa-play-circle-o" aria-hidden="true"></i>TREINOS</div>
-				<div class="botoes-rodape4" id="favoritos-rodape4"><i class="fa fa-cogs" aria-hidden="true"></i>AJUSTES</div>
+				<div class="botoes-rodape1" id="treinos-lista-interno-rodape1"><i class="fa fa-home" aria-hidden="true"></i>INÍCIO</div>
+				<div class="botoes-rodape2" id="treinos-lista-interno-rodape2"><i class="fa fa-star-o" aria-hidden="true"></i>FAVORITOS</div>
+				<div class="botoes-rodape3" id="treinos-lista-interno-rodape3" style="color:#c30b19;"><i class="fa fa-play-circle-o" aria-hidden="true"></i>TREINOS</div>
+				<div class="botoes-rodape4" id="treinos-lista-interno-rodape4"><i class="fa fa-cogs" aria-hidden="true"></i>AJUSTES</div>
 			</div>
 			
 			<style>
@@ -72,25 +73,30 @@
 				var tipo_usuarios = window.localStorage.getItem('tipo_usuarios');
 				var id_usuarios = window.localStorage.getItem('id_usuarios');
 				var registrationId = window.localStorage.getItem('registrationId');
+				var categoria_id = window.localStorage.getItem('categoria_id');
+				var treino_id = window.localStorage.getItem('treino_id');
 				
-				window.localStorage.setItem('url_voltar','favoritos.html');
+				var url_voltar = window.localStorage.getItem('url_voltar');
 				
-				$.get("http://justrun.projetotemporario.com.br/app_api/favoritos.php", { id_usuarios:id_usuarios }, function(data){ $("#favoritos-conteudo").html(data); });
+				$("#bt-treinos-lista-interno-voltar").click(function(){
+					$.mobile.changePage(url_voltar, { transition: "fade", changeHash: false });
+				});
 				
+				$.get("http://justrun.projetotemporario.com.br/app_api/treinos-lista-interno.php", { id_usuarios:id_usuarios, categoria_id:categoria_id, treino_id:treino_id }, function(data){ $("#treinos-lista-interno-conteudo").html(data); });
 				
-				$('#favoritos-rodape1').click(function(){
+				$('#treinos-lista-interno-rodape1').click(function(){
 					$.mobile.changePage("home.html", { transition: "fade", changeHash: false });
 				});
 				
-				$('#favoritos-rodape2').click(function(){
-
+				$('#treinos-lista-interno-rodape2').click(function(){
+					$.mobile.changePage("favoritos.html", { transition: "fade", changeHash: false });
 				});
 				
-				$('#favoritos-rodape3').click(function(){
+				$('#treinos-lista-interno-rodape3').click(function(){
 					$.mobile.changePage("treinos.html", { transition: "fade", changeHash: false });
 				});
 				
-				$('#favoritos-rodape4').click(function(){
+				$('#treinos-lista-interno-rodape4').click(function(){
 					$.mobile.changePage("preferencias.html", { transition: "fade", changeHash: false });
 				});
 				

@@ -74,6 +74,8 @@
 				var id_usuarios = window.localStorage.getItem('id_usuarios');
 				var registrationId = window.localStorage.getItem('registrationId');
 				var categoria_id = window.localStorage.getItem('categoria_id');
+								
+				window.localStorage.setItem('url_voltar','treinos_lista.html');
 				
 				$("#bt-treinos-lista-voltar").click(function(){
 					$.mobile.changePage("treinos.html", { transition: "fade", changeHash: false });

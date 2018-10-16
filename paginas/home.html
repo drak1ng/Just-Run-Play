@@ -73,6 +73,7 @@
 				var id_usuarios = window.localStorage.getItem('id_usuarios');
 				var registrationId = window.localStorage.getItem('registrationId');
 				
+				$.get("http://justrun.projetotemporario.com.br/app_api/configuracao.php", { id_usuarios:id_usuarios }, function(data){ $("#home-conteudo").html(data); });
 				
 				$('#home-rodape1').click(function(){
 

@@ -73,6 +73,8 @@
 				var id_usuarios = window.localStorage.getItem('id_usuarios');
 				var registrationId = window.localStorage.getItem('registrationId');
 				
+				$.get("http://justrun.projetotemporario.com.br/app_api/favoritos.php", { id_usuarios:id_usuarios }, function(data){ $("#favoritos-conteudo").html(data); });
+				
 				
 				$('#favoritos-rodape1').click(function(){
 					$.mobile.changePage("home.html", { transition: "fade", changeHash: false });

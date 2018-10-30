@@ -58,7 +58,9 @@
 				document.addEventListener("offline", onOffLine, true);
 				
 		        function onDeviceReady() {
-			        StatusBar.hide();
+			        StatusBar.backgroundColorByName("black");
+			        StatusBar.overlaysWebView(false);
+			        StatusBar.show();
 		            setTimeout(carregar, 500);
 		        }
 		        

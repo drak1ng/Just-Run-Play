@@ -21,7 +21,7 @@
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="msapplication-tap-highlight" content="no" />
-		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=medium-dpi" />
+		<meta name="viewport" content="user-scalable=no, initial-scale=0.8, maximum-scale=0.8, minimum-scale=0.8, width=375, viewport-fit=cover" />
         <link rel="stylesheet" type="text/css" href="../css/index.css" />
         <link rel="stylesheet" type="text/css" href="../css/jquery.mobile-1.4.5.min.css" />
         <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css" />
@@ -35,16 +35,17 @@
 	    
 	    <div data-role="page">
 
+
+
 		    <div class="topo">
 			    <div class="logotipo">
 				    <div class='perfil-topo'></div>
-				    <div style="min-width:10px; float:left; color:#FFF; padding:10px 10px; font-size:25px; margin:-10px 0px -10px -10px;" id="bt-preferencias-senha-voltar"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
-				    <div style="margin:0px 80px; text-align:center; color:#FFF; font-family:'roboto';" id="preferencias-senha-titulo"><img src="../img/justrun_logo.png" alt="JUST RUN" width="100"></div>
+				    <div style="margin:0px 80px; text-align:center; color:#FFF; font-family:'roboto';" id="perfil-titulo"><img src="../img/justrun_logo.png" alt="JUST RUN" width="100"></div>
 				</div>
 		    </div>
 
 			<div role="main" class="ui-content" style="text-align:center;">
-				<div class="conteudo" id="preferencias-senha-conteudo">
+				<div class="conteudo" id="perfil-conteudo">
 					<div style="padding-top:120px; text-align:center; font-size:13px; color:#000;">
 						<img src="../img/ajax-loader.gif" /><br><br>
 						Aguarde carregando...
@@ -53,48 +54,39 @@
 			</div>
 			
 			<div class="botoes-rodape">
-				<div class="botoes-rodape1" id="preferencias-senha-rodape1"><i class="fa fa-home" aria-hidden="true"></i>INÍCIO</div>
-				<div class="botoes-rodape2" id="preferencias-senha-rodape2"><i class="fa fa-star-o" aria-hidden="true"></i>FAVORITOS</div>
-				<div class="botoes-rodape3" id="preferencias-senha-rodape3"><i class="fa fa-play-circle-o" aria-hidden="true"></i>TREINOS</div>
-				<div class="botoes-rodape4" id="preferencias-senha-rodape4" style="color:#c30b19;"><i class="fa fa-cogs" aria-hidden="true"></i>AJUSTES</div>
+				<div class="botoes-rodape1" id="perfil-rodape1"><i class="fa fa-home" aria-hidden="true"></i>INÍCIO</div>
+				<div class="botoes-rodape2" id="perfil-rodape2"><i class="fa fa-star-o" aria-hidden="true"></i>FAVORITOS</div>
+				<div class="botoes-rodape3" id="perfil-rodape3"><i class="fa fa-play-circle-o" aria-hidden="true"></i>TREINOS</div>
+				<div class="botoes-rodape4" id="perfil-rodape4"><i class="fa fa-cogs" aria-hidden="true"></i>AJUSTES</div>
 			</div>
-			
+						
 			<script>
 				
 				var tipo_usuarios = window.localStorage.getItem('tipo_usuarios');
 				var id_usuarios = window.localStorage.getItem('id_usuarios');
 				var registrationId = window.localStorage.getItem('registrationId');
-
-				$("#bt-preferencias-senha-voltar").click(function(){
-					$.mobile.changePage("preferencias.html", { transition: "fade", changeHash: false });
-				});
 				
-				$.get("http://justrun.projetotemporario.com.br/app_api/configuracao_senha.php", { id_usuarios:id_usuarios }, function(data){ $("#preferencias-senha-conteudo").html(data); $('#preferencias-senha-conteudo').enhanceWithin(); });
+				window.localStorage.setItem('url_voltar','home.html');
 				
+				$.get("http://justrun.projetotemporario.com.br/app_api/perfil.php", { id_usuarios:id_usuarios }, function(data){ $("#perfil-conteudo").html(data); });
 				
-				
-				$('#preferencias-senha-rodape1').click(function(){
+				$('#home-rodape1').click(function(){
 					$.mobile.changePage("home.html", { transition: "fade", changeHash: false });
 				});
 				
-				$('#preferencias-senha-rodape2').click(function(){
+				$('#perfil-rodape2').click(function(){
 					$.mobile.changePage("favoritos.html", { transition: "fade", changeHash: false });
 				});
 				
-				$('#preferencias-senha-rodape3').click(function(){
+				$('#perfil-rodape3').click(function(){
 					$.mobile.changePage("treinos.html", { transition: "fade", changeHash: false });
 				});
 				
-				$('#preferencias-senha-rodape4').click(function(){
+				$('#perfil-rodape4').click(function(){
 					$.mobile.changePage("preferencias.html", { transition: "fade", changeHash: false });
 				});
 				
-				$('.perfil-topo').click(function(){
-					$.mobile.changePage("perfil.html", { transition: "fade", changeHash: false });
-				});
-				
 			</script>
-			
 			
 		
 		</div>

@@ -65,6 +65,11 @@
 				var tipo_usuarios = window.localStorage.getItem('tipo_usuarios');
 				var id_usuarios = window.localStorage.getItem('id_usuarios');
 				var registrationId = window.localStorage.getItem('registrationId');
+				var foto_usuarios = window.localStorage.getItem('foto_usuarios');
+				
+				if(foto_usuarios!=""){
+					$('.perfil-topo').css('background-image','url('+foto_usuarios+')');
+				}
 				
 				window.localStorage.setItem('url_voltar','home.html');
 				

@@ -80,7 +80,7 @@
 					$.get("http://justrunplay.com.br/app_api/cadastro.php", { nome:nome, idade:idade, celular:celular, email:email, senha:senha }, function(data){
 						if(data=="ERRO_CELULAR"){
 							alert("Esse E-mail já foi utilizado em outro cadastro!");
-						}elseif(data=="ERRO_IDADE"){
+						}else if(data=="ERRO_IDADE"){
 							alert("Você precisa ser maior de 16 anos para se cadastrar!");
 						}else{
 							$.get("http://justrunplay.com.br/app_api/login.php", { email:email, senha:senha }, function(data){

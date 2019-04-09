@@ -72,7 +72,7 @@
 					$.mobile.changePage("home.html", { transition: "fade", changeHash: false });
 				});
 				
-				$.get("http://justrunplay.com.br/app_api/configuracao.php", function(data){ $("#preferencias-conteudo").html(data); });
+				$.get("http://justrunplay.com.br/app_api/configuracao.php", { v:'2' }, function(data){ $("#preferencias-conteudo").html(data); });
 				
 				
 				

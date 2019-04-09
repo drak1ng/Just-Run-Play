@@ -100,6 +100,7 @@
 	<gap:plugin name="cordova-plugin-media" source="npm"  />
 	
 	<gap:plugin name="cordova-plugin-inappbrowser" source="npm"  />
+	<gap:plugin name="cordova-plugin-inapppurchase" source="npm"  />
 	
 	<gap:plugin name="cordova-plugin-dialogs" source="npm"  />
 	<gap:plugin name="cordova-plugin-device" source="npm" />

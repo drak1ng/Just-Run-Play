@@ -83,7 +83,7 @@
 				
 				window.localStorage.setItem('url_voltar','home.html');
 				
-				$.get("http://justrunplay.com.br/app_api/home.php", { id_usuarios:id_usuarios }, function(data){ $("#home-conteudo").html(data); });
+				$.get("http://justrunplay.com.br/app_api/home.php", { id_usuarios:id_usuarios, versao:'2' }, function(data){ $("#home-conteudo").html(data); });
 				
 				$('#home-rodape1').click(function(){
 

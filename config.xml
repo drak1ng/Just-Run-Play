@@ -2,8 +2,8 @@
 <widget xmlns = "http://www.w3.org/ns/widgets"
 	xmlns:gap = "http://phonegap.com/ns/1.0"
 	id        = "com.justrun.play"
-	versionCode="104" 
-	version   = "1.0.4">
+	versionCode="106" 
+	version   = "1.0.6">
 	<name>Just Run Play</name>
 	<description>
 		Just Run
@@ -111,6 +111,7 @@
 	
 	<gap:plugin name="cordova-plugin-camera" source="npm" />
 	<gap:plugin name="cordova-plugin-ios-camera-permissions" source="npm" />
+	<gap:plugin name="cordova-plugin-background-mode" source="npm" />
 	
 <plugin name="cordova-plugin-media-capture" source="npm" spec="*">
   <variable name="CAMERA_USAGE_DESCRIPTION" value="App would like to access the camera." />

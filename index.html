@@ -62,6 +62,8 @@
 			        StatusBar.backgroundColorByName("black");
 			        StatusBar.overlaysWebView(false);
 			        StatusBar.show();
+			        cordova.plugins.backgroundMode.enable();
+					cordova.plugins.backgroundMode.setEnabled(true);
 		            setTimeout(carregar, 500);
 		        }
 		        

@@ -142,5 +142,5 @@
 	<preference name="StatusBarOverlaysWebView"   value="false" />
 	<preference name="StatusBarBackgroundColor"   value="#000000" />
 	<preference name="StatusBarStyle"             value="lightcontent" />
-
+	<preference name="KeepRunning"				  value="true"/>.
 </widget>

@@ -111,7 +111,9 @@
 	
 	<gap:plugin name="cordova-plugin-camera" source="npm" />
 	<gap:plugin name="cordova-plugin-ios-camera-permissions" source="npm" />
+	
 	<gap:plugin name="cordova-plugin-background-mode" source="npm" />
+	<gap:plugin name="cordova-plugin-background-audio" source="npm" />
 	
 <plugin name="cordova-plugin-media-capture" source="npm" spec="*">
   <variable name="CAMERA_USAGE_DESCRIPTION" value="App would like to access the camera." />

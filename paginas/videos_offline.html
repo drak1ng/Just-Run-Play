@@ -119,8 +119,8 @@
 				}
 				
 				function getFilepath(audioUrl){
-					var options = { bgColor: "#000000", bgImage: "", bgImageScale:"fit", initFullscreen:false, keepAwake:true };
-					window.plugins.streamingMedia.playAudio(audioUrl, options);
+					var options = { orientation:"landscape", shouldAutoClose:true, controls:true, keepAwake:true };
+					window.plugins.streamingMedia.playVideo(videoUrl, options);
 				}
 			
 				function listDir(path){

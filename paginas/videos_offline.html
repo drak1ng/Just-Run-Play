@@ -108,20 +108,20 @@
 					for(i=0; i<entries.length; i++){
 						var row = entries[i];
 						var html = '';
-						
-						if(row.isDirectory){
-							html = '<li onclick="getFilepath('+"'"+row.nativeURL+"'"+');">'+row.name+'<br>'+row.nativeURL+'</li>';
-						}else{
-							html = '<li onclick="getFilepath('+"'"+row.nativeURL+"'"+');">'+row.name+'<br>'+row.nativeURL+'</li>';
-						}
+						var video = row.nativeURL;
+						var x = video.split("/");
+						var y = x.reverse();  
+
+						html+= '<li onclick="getFilepath('+"'"+row.nativeURL+"'"+');">'+row.name+'<br>'+row.nativeURL+'</li>';
+						html+= '<li onclick="getFilepath('+"'cdvfile://localhost/"+y+"'"+');">'+row.name+'<br>cdvfile://localhost/'+y+'</li>';
 					}
 					$('#offline-conteudo').html(html);
 				}
 				
 				function getFilepath(videoUrl){
-					//var options = { orientation:"landscape", shouldAutoClose:true, controls:true, keepAwake:true };
-					//window.plugins.streamingMedia.playVideo(videoUrl, options);
-					cordova.plugins.disusered.open(videoUrl);
+					var options = { orientation:"landscape", shouldAutoClose:true, controls:true, keepAwake:true };
+					window.plugins.streamingMedia.playVideo(videoUrl, options);
+
 				}
 			
 				

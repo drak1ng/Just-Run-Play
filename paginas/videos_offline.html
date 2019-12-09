@@ -110,9 +110,9 @@
 						var html = '';
 						
 						if(row.isDirectory){
-							html = '<li onclick="getFilepath('+"'"+row.nativeURL+"'"+');">'+row.name+'</li>';
+							html = '<li onclick="getFilepath('+"'"+row.nativeURL+"'"+');">'+row.name+'<br>'+row.nativeURL+'</li>';
 						}else{
-							html = '<li onclick="getFilepath('+"'"+row.nativeURL+"'"+');">'+row.name+'</li>';
+							html = '<li onclick="getFilepath('+"'"+row.nativeURL+"'"+');">'+row.name+'<br>'+row.nativeURL+'</li>';
 						}
 					}
 					$('#offline-conteudo').html(html);

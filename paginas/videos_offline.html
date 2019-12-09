@@ -110,12 +110,17 @@
 						var html = '';
 						
 						if(row.isDirectory){
-							html = '<li onclick="listPath('+"'"+row.nativeURL+"'"+');">'+row.name+'</li>';
+							html = '<li onclick="getFilepath('+"'"+row.nativeURL+"'"+');">'+row.name+'</li>';
 						}else{
 							html = '<li onclick="getFilepath('+"'"+row.nativeURL+"'"+');">'+row.name+'</li>';
 						}
 					}
 					$('#offline-conteudo').html(html);
+				}
+				
+				function getFilepath(audioUrl){
+					var options = { bgColor: "#000000", bgImage: "", bgImageScale:"fit", initFullscreen:false, keepAwake:true };
+					window.plugins.streamingMedia.playAudio(audioUrl, options);
 				}
 			
 				function listDir(path){

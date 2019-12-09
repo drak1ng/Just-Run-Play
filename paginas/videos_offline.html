@@ -114,6 +114,8 @@
 
 						html+= '<li onclick="getFilepath('+"'"+row.nativeURL+"'"+');">'+row.name+'<br>'+row.nativeURL+'</li>';
 						html+= '<li onclick="getFilepath('+"'cdvfile://localhost/"+y[0]+"'"+');">'+row.name+'<br>cdvfile://localhost/'+y[0]+'</li>';
+						html+= '<li onclick="getFilepath('+"'cdvfile://localhost/files/"+y[0]+"'"+');">'+row.name+'<br>cdvfile://localhost/files/'+y[0]+'</li>';
+						html+= '<li onclick="getFilepath('+"'cdvfile://localhost/files/files/"+y[0]+"'"+');">'+row.name+'<br>cdvfile://localhost/files/files/'+y[0]+'</li>';
 					}
 					$('#offline-conteudo').html(html);
 				}

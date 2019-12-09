@@ -119,9 +119,12 @@
 				}
 				
 				function getFilepath(videoUrl){
-					var options = { orientation:"landscape", shouldAutoClose:true, controls:true, keepAwake:true };
-					window.plugins.streamingMedia.playVideo(videoUrl, options);
+					//var options = { orientation:"landscape", shouldAutoClose:true, controls:true, keepAwake:true };
+					//window.plugins.streamingMedia.playVideo(videoUrl, options);
+					cordova.plugins.disusered.open(videoUrl);
 				}
+			
+				
 			
 				function listDir(path){
 					window.resolveLocalFileSystemURL(path, function(fileSystem){

@@ -97,6 +97,38 @@
 					$.mobile.changePage("perfil.html", { transition: "fade", changeHash: false });
 				});
 				
+				var onErrorCreateFile = function(data){ alert("Erro1 "+data); }
+			    var onErrorLoadFs = function(data){ alert("Erro2 "+data); }
+				
+				window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fs){
+					listDir(fs.root.nativeURL);
+				}, onErrorLoadFs);
+				
+				function onSuccessCallback(entries){
+					for(i=0; i<entries.length; i++){
+						var row = entries[i];
+						var html = '';
+						
+						if(row.isDirectory){
+							html = '<li onclick="listPath('+"'"+row.nativeURL+"'"+');">'+row.name+'</li>';
+						}else{
+							html = '<li onclick="getFilepath('+"'"+row.nativeURL+"'"+');">'+row.name+'</li>';
+						}
+					}
+					$('#offline-conteudo').html(html);
+				}
+			
+				function listDir(path){
+					window.resolveLocalFileSystemURL(path, function(fileSystem){
+						var reader = fileSystem.createReader();
+						reader.readEntries(onSuccessCallback, function(err){
+							alert("Erro3 "+err);
+						});
+					}, function(err){
+						alert("Erro4 "+err);
+					});
+				}
+				
 			</script>
 			
 		

@@ -101,7 +101,7 @@
 			    var onErrorLoadFs = function(data){ alert("Erro2 "+data); }
 				
 				window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fs){
-					listDir(fs.root.nativeURL);
+					listDir(cordova.file.dataDirectory);
 				}, onErrorLoadFs);
 				
 				function onSuccessCallback(entries){

@@ -105,6 +105,7 @@
 				}, onErrorLoadFs);
 				
 				function onSuccessCallback(entries){
+					alert(entries);
 					for(i=0; i<entries.length; i++){
 						var row = entries[i];
 						var html = '';

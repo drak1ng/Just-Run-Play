@@ -101,11 +101,10 @@
 			    var onErrorLoadFs = function(data){ alert("Erro2 "+data); }
 				
 				window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fs){
-					listDir(cordova.file.dataDirectory);
+					listDir(cordova.file.syncedDataDirectory);
 				}, onErrorLoadFs);
 				
 				function onSuccessCallback(entries){
-					alert(entries);
 					for(i=0; i<entries.length; i++){
 						var row = entries[i];
 						var html = '';

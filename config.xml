@@ -122,6 +122,7 @@
 	</plugin>
 
 	<gap:plugin name="cordova-open" source="npm" />
+	<gap:plugin name="cordova-plugin-downloader" source="npm" />
 	<gap:plugin name="cordova-plugin-file" source="npm" />
 
 	

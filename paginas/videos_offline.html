@@ -97,20 +97,24 @@
 					$.mobile.changePage("perfil.html", { transition: "fade", changeHash: false });
 				});
 				
-				listDir(cordova.file.dataDirectory+'videos');
-		
+				listDir(cordova.file.dataDirectory);
+				
 				function onSuccessCallback(entries){
+					var html = '';
 					for(i=0; i<entries.length; i++){
 						var row = entries[i];
-						var html = '';
 						var video = row.nativeURL;
 						var x = video.split("/");
-						var y = x.reverse();  
-		
-						html+= '<div style="padding:10px; border-bottom:1px solid #CCC; background:#FFF; font-size:16px;" onclick="getFilepath('+"'"+row.nativeURL+"'"+');">'+row.name+'<br>'+row.nativeURL+'</div>';
+						var y = x.reverse(); 
+						
+						if(row.isDirectory){
+							
+						}else{
+							html+= '<div style="padding:10px; border-bottom:1px solid #CCC; background:#FFF; font-size:16px;" onclick="getFilepath('+"'"+row.nativeURL+"'"+');">'+row.name+'</div>';
+						}
 					}
 					
-					$('#offline-conteudo').html('<div style="background:#000; padding:10px 0px; text-align:center; color:#FFF;">Download</div>'+html);
+					$('#offline-conteudo').html(html);
 				}
 				
 				function getFilepath(videoUrl){
@@ -130,8 +134,7 @@
 					}, function(err){
 						alert("Erro4 "+err);
 					});
-				}
-				
+				}				
 			</script>
 			
 		

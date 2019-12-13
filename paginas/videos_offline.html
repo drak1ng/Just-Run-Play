@@ -56,8 +56,8 @@
 			<div class="botoes-rodape">
 				<div class="botoes-rodape1" id="offline-rodape1"><i class="fa fa-home" aria-hidden="true"></i>INÍCIO</div>
 				<div class="botoes-rodape2" id="offline-rodape2"><i class="fa fa-star-o" aria-hidden="true"></i>FAVORITOS</div>
-				<div class="botoes-rodape3" id="offline-rodape3" style="color:#c30b19;"><i class="fa fa-play-circle-o" aria-hidden="true"></i>TREINOS</div>
-				<div class="botoes-rodape4" id="offline-rodape4"><i class="fa fa-cogs" aria-hidden="true"></i>AJUSTES</div>
+				<div class="botoes-rodape3" id="offline-rodape3"><i class="fa fa-play-circle-o" aria-hidden="true"></i>TREINOS</div>
+				<div class="botoes-rodape4" id="offline-rodape4" style="color:#c30b19;"><i class="fa fa-cogs" aria-hidden="true"></i>AJUSTES</div>
 			</div>
 			
 			<style>
@@ -97,8 +97,11 @@
 					$.mobile.changePage("perfil.html", { transition: "fade", changeHash: false });
 				});
 				
-				listDir(cordova.file.dataDirectory);
 				
+				
+				
+				listDir(cordova.file.dataDirectory);
+		
 				function onSuccessCallback(entries){
 					var html = '';
 					for(i=0; i<entries.length; i++){
@@ -110,11 +113,15 @@
 						if(row.isDirectory){
 							
 						}else{
-							html+= '<div style="padding:10px; border-bottom:1px solid #CCC; background:#FFF; font-size:16px;" onclick="getFilepath('+"'"+row.nativeURL+"'"+');">'+row.name+'</div>';
+							html+= '<div style="padding:20px; border-bottom:1px solid #CCC; background:#FFF; font-size:16px;">';
+								html+= '<i class="fa fa-play-circle" aria-hidden="true" onclick="getFilepath('+"'"+row.nativeURL+"'"+');" style="float:left; display:block; margin:-8px 0px -8px -20px; padding:9px 12px; font-size:24px;"></i>';
+								html+= '<i class="fa fa-times" aria-hidden="true" onclick="removeFile('+"'"+row.nativeURL+"'"+');" style="float:right; display:block; margin:-8px -20px -8px 0px; padding:9px 12px; font-size:24px;"></i>';
+								html+= '<span onclick="getFilepath('+"'"+row.nativeURL+"'"+');" style="font-size:15px;">'+row.name+'</span>';
+							html+= '</div>';
 						}
 					}
 					
-					$('#offline-conteudo').html(html);
+					$('#offline-conteudo').html('<div style="background:#000; padding:10px 0px; text-align:center; color:#FFF;">Download</div>'+html);
 				}
 				
 				function getFilepath(videoUrl){
@@ -122,8 +129,15 @@
 					window.plugins.streamingMedia.playVideo(videoUrl, options);
 		
 				}
-			
 				
+				function removeFile(entry){
+					navigator.notification.confirm('Tem certeza que deseja remover esse arquivo?', onConfirm, 'Remover Arquivo?', 'Sim,Não');
+					function onConfirm(button){
+						if(button==1){
+							window.resolveLocalFileSystemURL(entry, function(fileEntry){ fileEntry.remove(function(){ listDir(cordova.file.dataDirectory); }, function(error){ alert('Erro ao remover arquivo'); }); }); 
+						}
+					}
+				}
 			
 				function listDir(path){
 					window.resolveLocalFileSystemURL(path, function(fileSystem){

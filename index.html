@@ -70,7 +70,7 @@
 		            $('#checarConexao').hide();
 		            if(jaFicouOffline==1){
 			            jaFicouOffline=0;
-			            carregouPgOffline=1;
+			            carregouPgOffline=0;
 				        var id_usuarios = window.localStorage.getItem('id_usuarios');
 						if(id_usuarios!="" && id_usuarios!=null){
 							$.mobile.changePage("./paginas/home.html", { transition: "none", changeHash: false });
@@ -84,6 +84,7 @@
 		            if(jaFicouOffline==0){
 		            	$.mobile.changePage("./paginas/videos_offline.html", { transition: "none", changeHash: false });
 		            	jaFicouOffline = 1;
+			            carregouPgOffline=1;
 						$('.perfil-topo').hide();
 						$('.botoes-rodape').hide();
 		            }

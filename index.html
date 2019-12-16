@@ -82,6 +82,8 @@
 		            if(jaFicouOffline==0){
 		            	$.mobile.changePage("./paginas/videos_offline.html", { transition: "none", changeHash: false });
 		            	jaFicouOffline = 1;
+						$('.perfil-topo').hide();
+						$('.botoes-rodape').hide();
 		            }
 		        }
 		        

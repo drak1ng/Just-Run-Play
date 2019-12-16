@@ -53,6 +53,7 @@
 			<script>
 				
 				var jaFicouOffline = 0;
+				var carregouPgOffline = 0;
 				
 				document.addEventListener("deviceready", onDeviceReady, true);
 				document.addEventListener("online", onOnLine, true);
@@ -69,6 +70,7 @@
 		            $('#checarConexao').hide();
 		            if(jaFicouOffline==1){
 			            jaFicouOffline=0;
+			            carregouPgOffline=1;
 				        var id_usuarios = window.localStorage.getItem('id_usuarios');
 						if(id_usuarios!="" && id_usuarios!=null){
 							$.mobile.changePage("./paginas/home.html", { transition: "none", changeHash: false });
@@ -88,7 +90,7 @@
 		        }
 		        
 		        function carregar(){
-		            if(jaFicouOffline==1){
+		            if(carregouPgOffline==0){
 				        var id_usuarios = window.localStorage.getItem('id_usuarios');
 						if(id_usuarios!="" && id_usuarios!=null){
 							$.mobile.changePage("./paginas/home.html", { transition: "none", changeHash: false });

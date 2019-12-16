@@ -112,11 +112,7 @@
 						if(row.isDirectory){
 							
 						}else{
-							html+= '<div style="padding:20px; border-top:1px solid #CCC; border-bottom:1px solid #CCC; background:#FFF; font-size:16px; margin-bottom:-1px;">';
-								html+= '<i class="fa fa-play-circle" aria-hidden="true" onclick="getFilepath('+"'"+row.nativeURL+"'"+');" style="float:left; display:block; margin:-8px 0px -8px -20px; padding:9px 12px; font-size:24px;"></i>';
-								html+= '<i class="fa fa-times" aria-hidden="true" onclick="removeFile('+"'"+row.nativeURL+"'"+');" style="float:right; display:block; margin:-8px -20px -8px 0px; padding:9px 12px; font-size:24px;"></i>';
-								html+= '<span onclick="getFilepath('+"'"+row.nativeURL+"'"+');" style="font-size:15px;">'+row.name+'</span>';
-							html+= '</div>';
+							window.resolveLocalFileSystemURL(row.nativeURL,gotFile,fail);
 							contador++;
 						}
 					}
@@ -134,6 +130,33 @@
 					}
 					
 					$('#offline-conteudo').html(html);
+				}
+				
+				function fail(e) {
+					console.log("FileSystem Error");
+					console.dir(e);
+				}
+		
+				function gotFile(fileEntry) {
+				
+					fileEntry.file(function(file) {
+						var s = "";
+						var currentDate = new Date(file.lastModifiedDate);
+						var date = currentDate.getDate();
+						var month = currentDate.getMonth(); //Be careful! January is 0 not 1
+						var year = currentDate.getFullYear();				
+						var tamanho = ((file.size/1024)/1024);
+						var tamanho_arredondado = tamanho.toFixed(2);
+		
+						s+= '<div style="border-top:1px solid #CCC; border-bottom:1px solid #CCC; background:#FFF; font-size:16px; margin-bottom:-1px;">';
+							s+= '<i class="fa fa-play-circle" aria-hidden="true" onclick="getFilepath('+"'"+file.localURL+"'"+');" style="float:left; display:block; padding:40px; background:#000; color:#FFF; font-size:24px;"></i>';
+							s+= '<i class="fa fa-times" aria-hidden="true" onclick="removeFile('+"'"+file.localURL+"'"+');" style="float:right; display:block; margin:0px 0px 0px 0px; background:#c30; color:#FFF; padding:10px; font-size:24px;"></i>';
+							s+= '<div onclick="getFilepath('+"'"+file.localURL+"'"+');" style="font-size:15px; margin:15px 40px 0px 110px; line-height:18px;"><span style="font-size:17px; padding-bottom:10px; display:block;"><b>'+file.name+'</b></span>Data: '+date+'/'+month+'/'+year+'<br>Tamanho: '+tamanho_arredondado+'mb</div>';
+							s+= '<div style="clear:both;"></div>';
+						s+= '</div>';				
+		
+						$('#offline-conteudo').append(s);
+					});
 				}
 				
 				function getFilepath(videoUrl){

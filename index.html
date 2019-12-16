@@ -79,8 +79,10 @@
 		        }
 		        
 		        function onOffLine(){
-		            $('#checarConexao').show();
-		            jaFicouOffline = 1;
+		            if(jaFicouOffline==0){
+		            	$.mobile.changePage("./paginas/videos_offline.html", { transition: "none", changeHash: false });
+		            	jaFicouOffline = 1;
+		            }
 		        }
 		        
 		        function carregar(){

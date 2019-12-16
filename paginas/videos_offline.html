@@ -75,8 +75,6 @@
 				var registrationId = window.localStorage.getItem('registrationId');
 				var foto_usuarios = window.localStorage.getItem('foto_usuarios');
 				
-				$.get("https://justrunplay.com.br/app_api/treinos.php", { id_usuarios:id_usuarios }, function(data){ $("#treinos-conteudo").html(data); });
-				
 				$('#offline-rodape1').click(function(){
 					$.mobile.changePage("home.html", { transition: "fade", changeHash: false });
 				});
@@ -121,7 +119,7 @@
 						}
 					}
 					
-					$('#offline-conteudo').html('<div style="background:#000; padding:10px 0px; text-align:center; color:#FFF;">Download</div>'+html);
+					$('#offline-conteudo').html(html);
 				}
 				
 				function getFilepath(videoUrl){

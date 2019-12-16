@@ -149,9 +149,9 @@
 						var tamanho_arredondado = tamanho.toFixed(2);
 		
 						s+= '<div style="border-top:1px solid #CCC; border-bottom:1px solid #CCC; background:#FFF; font-size:16px; margin-bottom:-1px;">';
-							s+= '<i class="fa fa-play-circle" aria-hidden="true" onclick="getFilepath('+"'"+file.localURL+"'"+');" style="float:left; display:block; padding:40px; background:#000; color:#FFF; font-size:24px;"></i>';
-							s+= '<i class="fa fa-times" aria-hidden="true" onclick="removeFile('+"'"+file.localURL+"'"+');" style="float:right; display:block; margin:0px 0px 0px 0px; background:#c30; color:#FFF; padding:10px; font-size:24px;"></i>';
-							s+= '<div onclick="getFilepath('+"'"+file.localURL+"'"+');" style="font-size:15px; margin:15px 40px 0px 110px; line-height:18px;"><span style="font-size:17px; padding-bottom:10px; display:block;"><b>'+file.name+'</b></span>Data: '+date+'/'+month+'/'+year+'<br>Tamanho: '+tamanho_arredondado+'mb</div>';
+							s+= '<i class="fa fa-play-circle" aria-hidden="true" onclick="getFilepath('+"'"+fileEntry.nativeURL+"'"+');" style="float:left; display:block; padding:40px; background:#000; color:#FFF; font-size:24px;"></i>';
+							s+= '<i class="fa fa-times" aria-hidden="true" onclick="removeFile('+"'"+fileEntry.nativeURL+"'"+');" style="float:right; display:block; margin:0px 0px 0px 0px; background:#c30; color:#FFF; padding:10px; font-size:24px;"></i>';
+							s+= '<div onclick="getFilepath('+"'"+fileEntry.nativeURL+"'"+');" style="font-size:15px; margin:15px 40px 0px 110px; line-height:18px;"><span style="font-size:17px; padding-bottom:10px; display:block;"><b>'+file.name+'</b></span>Data: '+date+'/'+month+'/'+year+'<br>Tamanho: '+tamanho_arredondado+'mb</div>';
 							s+= '<div style="clear:both;"></div>';
 						s+= '</div>';				
 		

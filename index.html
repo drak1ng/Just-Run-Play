@@ -118,12 +118,20 @@
 				    e.preventDefault();
 				}, false);
 				
-$(document).bind("mobileinit", function(){
-  $.mobile.pageLoadErrorMessage = 'coming right up!';
-});
-$(document).bind("mobileinit", function(){
-  $.mobile.pageLoadErrorMessage = true;
-});
+				$(document).bind('mobileinit',function(){
+					$.mobile.loadingMessage = '';
+				});
+				
+				$(document).bind('mobileinit',function(){
+					$.mobile.pageLoadErrorMessage = '';
+				});
+				
+				$(document).bind('mobileinit',function(){
+					$.extend($.mobile, {
+						loadingMessage: '',
+						pageLoadErrorMessage: ''
+					});
+				});
 				
 			</script>
     </body>

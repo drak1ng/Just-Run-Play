@@ -118,6 +118,13 @@
 				    e.preventDefault();
 				}, false);
 				
+				function loadErrorCallBack(params){
+				    e.preventDefault();
+				}
+				
+				inAppBrowserRef = cordova.InAppBrowser.open(url, target, options);
+				inAppBrowserRef.addEventListener('loaderror', loadErrorCallBack);
+				
 			</script>
     </body>
 </html>

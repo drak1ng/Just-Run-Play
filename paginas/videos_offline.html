@@ -102,6 +102,7 @@
 		
 				function onSuccessCallback(entries){
 					var html = '';
+					var contador = 0;
 					for(i=0; i<entries.length; i++){
 						var row = entries[i];
 						var video = row.nativeURL;
@@ -116,7 +117,20 @@
 								html+= '<i class="fa fa-times" aria-hidden="true" onclick="removeFile('+"'"+row.nativeURL+"'"+');" style="float:right; display:block; margin:-8px -20px -8px 0px; padding:9px 12px; font-size:24px;"></i>';
 								html+= '<span onclick="getFilepath('+"'"+row.nativeURL+"'"+');" style="font-size:15px;">'+row.name+'</span>';
 							html+= '</div>';
+							contador++;
 						}
+					}
+					
+					if(contador==0){
+						
+						html = "<div style='text-align:center; font-size:24px; padding:20px 0px 0px 0px;'><b>Nenhum Vídeo</b></div>";
+						html+= "<div style='text-align:center; font-size:16px; padding:10px;'>Praesent lobortis vel orci vel condimentum. Quisque ac leo semper, pulvinar augue id, dignissim massa. Etiam ornare id ipsum in lobortis. In ultricies, nulla at vulputate ultricies, odio neque bibendum augue, vitae tristique quam risus quis nulla.</div>";
+						
+					}else{
+					
+						html = "<div style='text-align:center; font-size:24px; padding:20px 0px 0px 0px;'><b>Vídeos Salvos</b></div><div style='text-align:center; font-size:16px; padding:10px;'>Praesent lobortis vel orci vel condimentum. Quisque ac leo semper, pulvinar augue id, dignissim massa. Etiam ornare id ipsum in lobortis. In ultricies, nulla at vulputate ultricies, odio neque bibendum augue, vitae tristique quam risus quis nulla.</div>" + html;
+						html = html + "<div style='padding:30px 0px; text-align:center;'>Total de vídeos: "+contador+"</div>";
+					
 					}
 					
 					$('#offline-conteudo').html(html);

@@ -118,9 +118,10 @@
 	<gap:plugin name="cordova-plugin-background-mode" source="npm" />
 	
 	<plugin name="cordova-plugin-media-capture" source="npm" spec="*">
-	  <variable name="CAMERA_USAGE_DESCRIPTION" value="App would like to access the camera." />
-	  <variable name="MICROPHONE_USAGE_DESCRIPTION" value="App would like to access the microphone." />
-	  <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="App would like to access the library." />
+	  <variable name="CAMERA_USAGE_DESCRIPTION" value="Aplicativo gostaria de acessar a câmera." />
+	  <variable name="MICROPHONE_USAGE_DESCRIPTION" value="Aplicativo gostaria de acessar o microfone." />
+	  <variable name="PHOTOLIBRARY_ADD_USAGE_DESCRIPTION" value="Aplicativo gostaria de acessar sua Galeria." />
+	  <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="Aplicativo gostaria de acessar sua Galeria." />
 	</plugin>
 
 	<gap:plugin name="cordova-open" source="npm" />

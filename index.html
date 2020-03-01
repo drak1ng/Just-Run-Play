@@ -68,6 +68,43 @@
 		        
 		        function onOnLine(){
 		            $('#checarConexao').hide();
+		            
+					console.log('calling push init');
+			        var push = PushNotification.init({
+			            "android": {
+			                "senderID": "662294625891"
+			            },
+			            "browser": {},
+			            "ios": {
+			                "sound": true,
+			                "vibration": true,
+			                "badge": true
+			            },
+			            "windows": {}
+			        });
+			        console.log('after init');
+			
+			        push.on('registration', function(data) {
+			            console.log('registration event: ' + data.registrationId);
+		                localStorage.setItem('registrationId', data.registrationId);			            
+			            //alert(data.registrationId);
+			        });
+			
+			        push.on('error', function(e) {
+				        alert("push error = " + e.message);
+			            console.log("push error = " + e.message);
+			        });
+			
+			        push.on('notification', function(data) {
+			            console.log('notification event');
+			            if(data.additionalData.type=="mensagem"){
+							window.localStorage.setItem('id_tarefa',data.additionalData.codigo);
+							$.mobile.changePage("home.html", { transition: "fade", changeHash: false });
+			            }else{
+				            $.mobile.changePage("home.html", { transition: "fade", changeHash: false });
+			            }
+			    	});
+		            
 		            if(jaFicouOffline==1){
 			            jaFicouOffline=0;
 			            carregouPgOffline=0;

@@ -129,9 +129,7 @@
 	<gap:plugin name="cordova-plugin-ftp" source="npm" />
 	<gap:plugin name="cordova-plugin-file" source="npm" />
 
-	<plugin name="phonegap-plugin-push" source="npm" spec="~2.2.0">
-	    <variable name="SENDER_ID" value="1006483725516" />
-	</plugin>
+	<plugin name="cordova-plugin-fcm" source="npm"/>
 	
 	<platform name="android">
 		<resource-file src="google-services.json" target="app/google-services.json" />

@@ -130,7 +130,7 @@
 	<gap:plugin name="cordova-plugin-file" source="npm" />
 
 
-	<plugin name="phonegap-plugin-push" source="npm">
+	<plugin name="phonegap-plugin-push" source="npm" spec="~1.11.1">
 	    <variable name="SENDER_ID" value="1006483725516" />
 	</plugin>
 	

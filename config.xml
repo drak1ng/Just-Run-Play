@@ -129,17 +129,17 @@
 	<gap:plugin name="cordova-plugin-ftp" source="npm" />
 	<gap:plugin name="cordova-plugin-file" source="npm" />
 
-	<plugin name="cordova-android-play-services-gradle-release" spec="^4.0.0">
-		<variable name="PLAY-SERVICES-MEASUREMENT" value="17.2.0" />
-		<variable name="PLAY-SERVICES-MEASUREMENT-API" value="17.2.0" />
-		<variable name="PLAY-SERVICES-MEASUREMENT-IMPL" value="17.2.0" />
-		<variable name="PLAY-SERVICES-MEASUREMENT-SDK" value="17.2.0" />
-		<variable name="PLAY-SERVICES-MEASUREMENT-SDK-API" value="17.2.0" />
-	</plugin>
-
-	<plugin name="phonegap-plugin-push" source="npm" spec="~1.11.1">
+	<plugin name="phonegap-plugin-push" source="npm" spec="~2.2.0">
 	    <variable name="SENDER_ID" value="1006483725516" />
 	</plugin>
+	
+	<platform name="android">
+		<resource-file src="google-services.json" target="app/google-services.json" />
+	</platform>
+	
+	<platform name="ios">
+	  <resource-file src="GoogleService-Info.plist" />
+	</platform>
 	
 	
 	<!-- Teclado sobrepondo para o android, igual iphone -->

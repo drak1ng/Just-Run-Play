@@ -69,33 +69,34 @@
 		        function onOnLine(){
 		            $('#checarConexao').hide();
 		            
-					console.log('calling push init');
-			        var push = PushNotification.init({
-			            "android": {
-			                "senderID": "1006483725516"
-			            },
-			            "browser": {},
-			            "ios": {
-			                "sound": true,
-			                "vibration": true,
-			                "badge": true
-			            },
-			            "windows": {}
-			        });
-			        console.log('after init');
-			
-			        push.on('registration', function(data) {
+					const push = PushNotification.init({
+						android: {
+							"senderID": "1006483725516"
+						},
+					    browser: {
+					        pushServiceURL: 'http://push.api.phonegap.com/v1/push'
+					    },
+						ios: {
+							alert: "true",
+							badge: "true",
+							sound: "true"
+						},
+						windows: {}
+					});
+					
+					push.on('registration', (data) => {
+						// data.registrationId
 			            console.log('registration event: ' + data.registrationId);
 		                localStorage.setItem('registrationId', data.registrationId);			            
-			            //alert(data.registrationId);
-			        });
-			
-			        push.on('error', function(e) {
-				        alert("push error = " + e.message);
-			            console.log("push error = " + e.message);
-			        });
-			
-			        push.on('notification', function(data) {
+					});
+					
+					push.on('notification', (data) => {
+						// data.message,
+						// data.title,
+						// data.count,
+						// data.sound,
+						// data.image,
+						// data.additionalData
 			            console.log('notification event');
 			            if(data.additionalData.type=="mensagem"){
 							window.localStorage.setItem('id_tarefa',data.additionalData.codigo);
@@ -103,7 +104,14 @@
 			            }else{
 				            $.mobile.changePage("home.html", { transition: "fade", changeHash: false });
 			            }
-			    	});
+					});
+					
+					push.on('error', (e) => {
+						// e.message
+				        alert("push error = " + e.message);
+			            console.log("push error = " + e.message);
+					});
+					
 		            
 		            if(jaFicouOffline==1){
 			            jaFicouOffline=0;

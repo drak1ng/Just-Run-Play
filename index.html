@@ -69,6 +69,17 @@
 		        function onOnLine(){
 		            $('#checarConexao').hide();
 		            
+		            FCMPlugin.hasPermission(function(doesIt){
+					    // doesIt === true => yes, push was allowed
+					    // doesIt === false => nope, push will not be available
+					    // doesIt === null => still not answered, recommended checking again later
+					    if(doesIt) {
+					        alert("Tenho permissao");
+					    }else{
+						    alert("Nao tenho permissao");
+					    }
+					});
+		            
 		            FCMPlugin.onTokenRefresh(function(token){
 			            console.log('registration event: ' + token);
 		                localStorage.setItem('registrationId', token);			            

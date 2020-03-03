@@ -81,11 +81,13 @@
 					});
 		            
 		            FCMPlugin.onTokenRefresh(function(token){
+			            alert("Token: "+token);
 			            console.log('registration event: ' + token);
 		                localStorage.setItem('registrationId', token);			            
 					});
 					
 					FCMPlugin.getToken(function(token){
+			            alert("Token: "+token);
 			            console.log('registration event: ' + token);
 		                localStorage.setItem('registrationId', token);			            
 					});

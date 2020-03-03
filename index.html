@@ -74,22 +74,22 @@
 					    // doesIt === false => nope, push will not be available
 					    // doesIt === null => still not answered, recommended checking again later
 					    if(doesIt) {
-					        alert("Tenho permissao");
+					        console.log("Tenho permissao");
 					    }else{
-						    alert("Nao tenho permissao");
+						    console.log("Nao tenho permissao");
 					    }
 					});
 		            
 		            FCMPlugin.onTokenRefresh(function(token){
-			            alert("Token: "+token);
 			            console.log('registration event: ' + token);
 		                localStorage.setItem('registrationId', token);			            
+		                FCMPlugin.subscribeToTopic('topicExample');
 					});
 					
 					FCMPlugin.getToken(function(token){
-			            alert("Token: "+token);
 			            console.log('registration event: ' + token);
 		                localStorage.setItem('registrationId', token);			            
+		                FCMPlugin.subscribeToTopic('topicExample');
 					});
 					
 					FCMPlugin.onNotification(function(data){
@@ -99,6 +99,7 @@
 							console.log('Receive: ' + JSON.stringify(data));
 					    }
 					});
+					
 		            
 					
 					

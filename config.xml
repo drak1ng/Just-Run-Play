@@ -129,7 +129,7 @@
 	<gap:plugin name="cordova-plugin-ftp" source="npm" />
 	<gap:plugin name="cordova-plugin-file" source="npm" />
 
-	<plugin name="cordova-plugin-fcm" source="npm"/>
+	<plugin name="cordova-plugin-fcm-with-dependecy-updated" source="npm"/>
 	
 	<platform name="android">
 		<resource-file src="google-services.json" target="app/google-services.json" />

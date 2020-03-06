@@ -83,20 +83,22 @@
 		            FCMPlugin.onTokenRefresh(function(token){
 			            console.log('registration event: ' + token);
 		                localStorage.setItem('registrationId', token);			            
-		                FCMPlugin.subscribeToTopic('topicExample');
+		                FCMPlugin.subscribeToTopic();
 					});
 					
 					FCMPlugin.getToken(function(token){
 			            console.log('registration event: ' + token);
 		                localStorage.setItem('registrationId', token);			            
-		                FCMPlugin.subscribeToTopic('topicExample');
+		                FCMPlugin.subscribeToTopic();
 					});
 					
 					FCMPlugin.onNotification(function(data){
 					    if(data.wasTapped){
+						    alert('Receive tapped: ' + JSON.stringify(data));
 							console.log('Receive tapped: ' + JSON.stringify(data));
 					    }else{
 							console.log('Receive: ' + JSON.stringify(data));
+						    alert('Receive: ' + JSON.stringify(data));
 					    }
 					});
 					

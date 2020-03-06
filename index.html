@@ -110,6 +110,11 @@
 							if(data.tipo=="Home"){
 								console.log('Tipo: Home');
 							}
+							if(data.tipo=="Personalizado"){
+								console.log('Tipo: Personalizado');
+								window.localStorage.setItem(data.varapp , data.codigo);
+								$.mobile.changePage(data.pagina, { transition: "fade", changeHash: false });
+							}
 					    }else{
 							console.log('Receive: ' + JSON.stringify(data));
 							console.log('Tipo: ' + data.tipo);

@@ -97,6 +97,16 @@
 							console.log('Receive tapped: ' + JSON.stringify(data));
 							console.log('Tipo: ' + data.tipo);
 							console.log('Codigo: ' + data.codigo);
+							if(data.tipo=="Vídeo"){
+								console.log('Tipo: Vídeo');
+								window.localStorage.setItem('treino_id',data.codigo);
+								$.mobile.changePage("treinos_lista_interno.html", { transition: "fade", changeHash: false });
+							}
+							if(data.tipo=="Categoria"){
+								console.log('Tipo: Categoria');
+								window.localStorage.setItem('categoria_id',data.codigo);
+								$.mobile.changePage("treinos_lista.html", { transition: "fade", changeHash: false });
+							}
 					    }else{
 							console.log('Receive: ' + JSON.stringify(data));
 							console.log('Tipo: ' + data.tipo);

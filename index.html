@@ -93,6 +93,8 @@
 					});
 					
 					FCMPlugin.onNotification(function(data){
+					    alert('Externo: ' + JSON.stringify(data));
+						console.log('Externo: ' + JSON.stringify(data));
 					    if(data.wasTapped){
 						    alert('Receive tapped: ' + JSON.stringify(data));
 							console.log('Receive tapped: ' + JSON.stringify(data));

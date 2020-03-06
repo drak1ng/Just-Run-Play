@@ -93,14 +93,28 @@
 					});
 					
 					FCMPlugin.onNotification(function(data){
-					    alert('Externo: ' + JSON.stringify(data));
-						console.log('Externo: ' + JSON.stringify(data));
 					    if(data.wasTapped){
-						    alert('Receive tapped: ' + JSON.stringify(data));
 							console.log('Receive tapped: ' + JSON.stringify(data));
+							if(data.tipo=="Vídeo"){
+								console.log('Tipo: Vídeo');
+								window.localStorage.setItem('treino_id',data.codigo);
+								$.mobile.changePage("treinos_lista_interno.html", { transition: "fade", changeHash: false });
+							}
+							if(data.tipo=="Categoria"){
+								console.log('Tipo: Categoria');
+								window.localStorage.setItem('categoria_id',data.codigo);
+								$.mobile.changePage("treinos_lista.html", { transition: "fade", changeHash: false });
+							}
+							if(data.tipo=="Personalizado"){
+								console.log('Tipo: Personalizado');
+								window.localStorage.setItem(data.varapp,data.codigo);
+								$.mobile.changePage(data.pagina, { transition: "fade", changeHash: false });
+							}
+							if(data.tipo=="Home"){
+								console.log('Tipo: Home');
+							}
 					    }else{
 							console.log('Receive: ' + JSON.stringify(data));
-						    alert('Receive: ' + JSON.stringify(data));
 					    }
 					});
 					

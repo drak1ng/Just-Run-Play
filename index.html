@@ -95,8 +95,12 @@
 					FCMPlugin.onNotification(function(data){
 					    if(data.wasTapped){
 							console.log('Receive tapped: ' + JSON.stringify(data));
+							console.log('Tipo: ' + data.tipo);
+							console.log('Codigo: ' + data.codigo);
 					    }else{
 							console.log('Receive: ' + JSON.stringify(data));
+							console.log('Tipo: ' + data.tipo);
+							console.log('Codigo: ' + data.codigo);
 					    }
 					});
 					

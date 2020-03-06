@@ -107,6 +107,9 @@
 								window.localStorage.setItem('categoria_id',data.codigo);
 								$.mobile.changePage("treinos_lista.html", { transition: "fade", changeHash: false });
 							}
+							if(data.tipo=="Home"){
+								console.log('Tipo: Home');
+							}
 					    }else{
 							console.log('Receive: ' + JSON.stringify(data));
 							console.log('Tipo: ' + data.tipo);

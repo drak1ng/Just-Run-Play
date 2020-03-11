@@ -136,7 +136,7 @@
 	</platform>
 	
 	<platform name="ios">
-		<resource-file src="GoogleService-Info.plist" />
+		<resource-file src="app/GoogleService-Info.plist" />
 	</platform>
 	
 	

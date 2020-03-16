@@ -133,7 +133,7 @@
 	<plugin name="cordova-plugin-fcm-with-dependecy-updated" source="npm" spec="~4.2.0" />
 	
 	<platform name="android">
-		<resource-file src="google-services.json" target="google-services.json" />
+		<resource-file src="google-services.json" target="app/google-services.json" />
 	</platform>
 	
 	<platform name="ios">

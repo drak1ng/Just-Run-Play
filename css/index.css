@@ -201,14 +201,16 @@ h1 {
 	padding-bottom: env(safe-area-inset-bottom); /* iOS 11.2 */
 }
 
-.botoes-rodape1				{ width:25%; float:left; text-align:center; font-size:12px; font-weight:bold; color:#4f4f4f; }
-.botoes-rodape1 i			{ display:block; font-size:30px; padding:10px 0px 3px 0px; text-shadow:none !important; }
-.botoes-rodape2				{ width:25%; float:left; text-align:center; font-size:12px; font-weight:bold; color:#4f4f4f; }
-.botoes-rodape2 i			{ display:block; font-size:30px; padding:10px 0px 3px 0px; text-shadow:none !important; }
-.botoes-rodape3				{ width:25%; float:left; text-align:center; font-size:12px; font-weight:bold; color:#4f4f4f; }
-.botoes-rodape3 i			{ display:block; font-size:30px; padding:10px 0px 3px 0px; text-shadow:none !important; }
-.botoes-rodape4				{ width:25%; float:left; text-align:center; font-size:12px; font-weight:bold; color:#4f4f4f; }
-.botoes-rodape4 i			{ display:block; font-size:30px; padding:10px 0px 3px 0px; text-shadow:none !important; }
+.botoes-rodape1				{ width:20%; float:left; text-align:center; font-size:12px; font-weight:bold; color:#4f4f4f; }
+.botoes-rodape1 i			{ display:block; font-size:28px; padding:11px 0px 4px 0px; text-shadow:none !important; }
+.botoes-rodape2				{ width:20%; float:left; text-align:center; font-size:12px; font-weight:bold; color:#4f4f4f; }
+.botoes-rodape2 i			{ display:block; font-size:28px; padding:11px 0px 4px 0px; text-shadow:none !important; }
+.botoes-rodape3				{ width:20%; float:left; text-align:center; font-size:12px; font-weight:bold; color:#4f4f4f; }
+.botoes-rodape3 i			{ display:block; font-size:28px; padding:11px 0px 4px 0px; text-shadow:none !important; }
+.botoes-rodape4				{ width:20%; float:left; text-align:center; font-size:12px; font-weight:bold; color:#4f4f4f; }
+.botoes-rodape4 i			{ display:block; font-size:28px; padding:11px 0px 4px 0px; text-shadow:none !important; }
+.botoes-rodape5				{ width:20%; float:left; text-align:center; font-size:12px; font-weight:bold; color:#4f4f4f; }
+.botoes-rodape5 i			{ display:block; font-size:28px; padding:11px 0px 4px 0px; text-shadow:none !important; }
 
 .bt_voltar {
 	min-width:10px;

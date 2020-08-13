@@ -53,10 +53,11 @@
 			</div>
 			
 			<div class="botoes-rodape">
-				<div class="botoes-rodape1" id="preferencias-politica-rodape1"><i class="fa fa-home" aria-hidden="true"></i>INÍCIO</div>
-				<div class="botoes-rodape2" id="preferencias-politica-rodape2"><i class="fa fa-star-o" aria-hidden="true"></i>FAVORITOS</div>
-				<div class="botoes-rodape3" id="preferencias-politica-rodape3"><i class="fa fa-play-circle-o" aria-hidden="true"></i>TREINOS</div>
-				<div class="botoes-rodape4" id="preferencias-politica-rodape4" style="color:#c30b19;"><i class="fa fa-cogs" aria-hidden="true"></i>AJUSTES</div>
+				<div class="botoes-rodape1" id="preferencias-politica-rodape1"><i class="fal fa-home-lg"></i>INÍCIO</div>
+				<div class="botoes-rodape2" id="preferencias-politica-rodape2"><i class="fal fa-signal-stream"></i>AO VIVO</div>
+				<div class="botoes-rodape3" id="preferencias-politica-rodape3"><i class="fal fa-play"></i>TREINOS</div>
+				<div class="botoes-rodape4" id="preferencias-politica-rodape4"><i class="fal fa-walking"></i>TREINADOR</div>
+				<div class="botoes-rodape4" id="preferencias-politica-rodape5" style="color:#c30b19;"><i class="fal fa-cogs"></i>AJUSTES</div>
 			</div>
 			
 			<script>
@@ -78,25 +79,12 @@
 				
 				
 				
-				$('#preferencias-politica-rodape1').click(function(){
-					$.mobile.changePage("home.html", { transition: "fade", changeHash: false });
-				});
-				
-				$('#preferencias-politica-rodape2').click(function(){
-					$.mobile.changePage("favoritos.html", { transition: "fade", changeHash: false });
-				});
-				
-				$('#preferencias-politica-rodape3').click(function(){
-					$.mobile.changePage("treinos.html", { transition: "fade", changeHash: false });
-				});
-				
-				$('#preferencias-politica-rodape4').click(function(){
-					$.mobile.changePage("preferencias.html", { transition: "fade", changeHash: false });
-				});
-				
-				$('.perfil-topo').click(function(){
-					$.mobile.changePage("perfil.html", { transition: "fade", changeHash: false });
-				});
+				$('#preferencias-politica-rodape1').click(function(){ $.mobile.changePage("home.html", { transition: "fade", changeHash: false }); });
+				$('#preferencias-politica-rodape2').click(function(){ $.mobile.changePage("ao-vivo.html", { transition: "fade", changeHash: false }); });
+				$('#preferencias-politica-rodape3').click(function(){ $.mobile.changePage("treinos.html", { transition: "fade", changeHash: false }); });
+				$('#preferencias-politica-rodape4').click(function(){ $.mobile.changePage("treinador.html", { transition: "fade", changeHash: false }); });
+				$('#preferencias-politica-rodape5').click(function(){ $.mobile.changePage("preferencias.html", { transition: "fade", changeHash: false }); });
+				$('.perfil-topo').click(function(){ $.mobile.changePage("perfil.html", { transition: "fade", changeHash: false }); });
 				
 			</script>
 			

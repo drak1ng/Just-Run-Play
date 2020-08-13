@@ -55,10 +55,11 @@
 			</div>
 			
 			<div class="botoes-rodape">
-				<div class="botoes-rodape1" id="treinos-lista-rodape1"><i class="fa fa-home" aria-hidden="true"></i>INÍCIO</div>
-				<div class="botoes-rodape2" id="treinos-lista-rodape2"><i class="fa fa-star-o" aria-hidden="true"></i>FAVORITOS</div>
-				<div class="botoes-rodape3" id="treinos-lista-rodape3" style="color:#c30b19;"><i class="fa fa-play-circle-o" aria-hidden="true"></i>TREINOS</div>
-				<div class="botoes-rodape4" id="treinos-lista-rodape4"><i class="fa fa-cogs" aria-hidden="true"></i>AJUSTES</div>
+				<div class="botoes-rodape1" id="treinos-lista-rodape1"><i class="fal fa-home-lg"></i>INÍCIO</div>
+				<div class="botoes-rodape2" id="treinos-lista-rodape2"><i class="fal fa-signal-stream"></i>AO VIVO</div>
+				<div class="botoes-rodape3" id="treinos-lista-rodape3" style="color:#c30b19;"><i class="fal fa-play"></i>TREINOS</div>
+				<div class="botoes-rodape4" id="treinos-lista-rodape4"><i class="fal fa-walking"></i>TREINADOR</div>
+				<div class="botoes-rodape4" id="treinos-lista-rodape5"><i class="fal fa-cogs"></i>AJUSTES</div>
 			</div>
 			
 			<style>
@@ -89,25 +90,12 @@
 				
 				$.get("https://justrunplay.com.br/app_api/treinos-lista.php", { id_usuarios:id_usuarios, categoria_id:categoria_id }, function(data){ $("#treinos-lista-conteudo").html(data); });
 				
-				$('#treinos-lista-rodape1').click(function(){
-					$.mobile.changePage("home.html", { transition: "fade", changeHash: false });
-				});
-				
-				$('#treinos-lista-rodape2').click(function(){
-					$.mobile.changePage("favoritos.html", { transition: "fade", changeHash: false });
-				});
-				
-				$('#treinos-lista-rodape3').click(function(){
-					$.mobile.changePage("treinos.html", { transition: "fade", changeHash: false });
-				});
-				
-				$('#treinos-lista-rodape4').click(function(){
-					$.mobile.changePage("preferencias.html", { transition: "fade", changeHash: false });
-				});
-				
-				$('.perfil-topo').click(function(){
-					$.mobile.changePage("perfil.html", { transition: "fade", changeHash: false });
-				});
+				$('#treinos-lista-rodape1').click(function(){ $.mobile.changePage("home.html", { transition: "fade", changeHash: false }); });
+				$('#treinos-lista-rodape2').click(function(){ $.mobile.changePage("ao-vivo.html", { transition: "fade", changeHash: false }); });
+				$('#treinos-lista-rodape3').click(function(){ $.mobile.changePage("treinos.html", { transition: "fade", changeHash: false }); });
+				$('#treinos-lista-rodape4').click(function(){ $.mobile.changePage("treinador.html", { transition: "fade", changeHash: false }); });
+				$('#treinos-lista-rodape5').click(function(){ $.mobile.changePage("preferencias.html", { transition: "fade", changeHash: false }); });
+				$('.perfil-topo').click(function(){ $.mobile.changePage("perfil.html", { transition: "fade", changeHash: false }); });
 				
 			</script>
 			

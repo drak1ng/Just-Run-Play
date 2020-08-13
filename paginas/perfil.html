@@ -74,6 +74,8 @@
 				
 				window.localStorage.setItem('url_voltar','home.html');
 				
+				$.get("https://justrunplay.com.br/app_api_v2/perfil.php", { id_usuarios:id_usuarios }, function(data){ $("#perfil-conteudo").html(data); });
+				
 				$('#perfil-rodape1').click(function(){ $.mobile.changePage("home.html", { transition: "fade", changeHash: false }); });
 				$('#perfil-rodape2').click(function(){ $.mobile.changePage("ao-vivo.html", { transition: "fade", changeHash: false }); });
 				$('#perfil-rodape3').click(function(){ $.mobile.changePage("treinos.html", { transition: "fade", changeHash: false }); });

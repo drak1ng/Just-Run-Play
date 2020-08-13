@@ -73,7 +73,7 @@
 					$.mobile.changePage("home.html", { transition: "fade", changeHash: false });
 				});
 				
-				$.get("https://justrunplay.com.br/app_api/configuracao.php", { tipo_usuarios:tipo_usuarios, id_usuarios:id_usuarios, registrationId:registrationId, v:'3' }, function(data){ $("#preferencias-conteudo").html(data); });
+				$.get("https://justrunplay.com.br/app_api_v2/configuracao.php", { tipo_usuarios:tipo_usuarios, id_usuarios:id_usuarios, registrationId:registrationId, v:'3' }, function(data){ $("#preferencias-conteudo").html(data); });
 				
 				
 				

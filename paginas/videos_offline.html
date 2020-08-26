@@ -113,7 +113,7 @@
 					}else{
 					
 						html = "<div style='text-align:center; font-size:24px; padding:40px 0px 10px 0px;'><b>Ops, parece que você esta sem conexão!</b></div><div style='text-align:center; font-size:16px; padding:20px 10px;'>Mas fica tranquilo, aqui esta a lista dos treinos que você já baixou.  Mesmo sem conexão, vai ter o #SEUMELHORTREINO .</div>" + html;
-						html = html + "<div style='padding:30px 0px; text-align:center;'>Total de vídeos: "+contador+"</div>";
+						//html = html + "<div style='padding:30px 0px; text-align:center;'>Total de vídeos: "+contador+"</div>";
 					
 					}
 					
@@ -136,12 +136,14 @@
 						var tamanho = ((file.size/1024)/1024);
 						var tamanho_arredondado = tamanho.toFixed(2);
 		
-						s+= '<div style="border-top:1px solid #CCC; border-bottom:1px solid #CCC; background:#FFF; font-size:16px; margin-bottom:-1px;">';
-							s+= '<i class="fa fa-play-circle" aria-hidden="true" onclick="getFilepath('+"'"+fileEntry.nativeURL+"'"+');" style="float:left; display:block; padding:40px; background:#000; color:#FFF; font-size:24px;"></i>';
-							s+= '<i class="fa fa-times" aria-hidden="true" onclick="removeFile('+"'"+fileEntry.nativeURL+"'"+');" style="float:right; display:block; margin:0px 0px 0px 0px; background:#c30; color:#FFF; padding:10px; font-size:24px;"></i>';
-							s+= '<div onclick="getFilepath('+"'"+fileEntry.nativeURL+"'"+');" style="font-size:15px; margin:15px 40px 0px 110px; line-height:18px;"><span style="font-size:17px; padding-bottom:10px; display:block;"><b>'+file.name+'</b></span>Data: '+date+'/'+month+'/'+year+'<br>Tamanho: '+tamanho_arredondado+'mb</div>';
-							s+= '<div style="clear:both;"></div>';
-						s+= '</div>';				
+						if(file.name!=".nomedia"){
+							s+= '<div style="border-top:1px solid #CCC; border-bottom:1px solid #CCC; background:#FFF; font-size:16px; margin-bottom:-1px;">';
+								s+= '<i class="fa fa-play-circle" aria-hidden="true" onclick="getFilepath('+"'"+fileEntry.nativeURL+"'"+');" style="float:left; display:block; padding:40px; background:#000; color:#FFF; font-size:24px;"></i>';
+								s+= '<i class="fa fa-times" aria-hidden="true" onclick="removeFile('+"'"+fileEntry.nativeURL+"'"+');" style="float:right; display:block; margin:0px 0px 0px 0px; background:#c30; color:#FFF; padding:10px; font-size:24px;"></i>';
+								s+= '<div onclick="getFilepath('+"'"+fileEntry.nativeURL+"'"+');" style="font-size:15px; margin:15px 40px 0px 110px; line-height:18px;"><span style="font-size:17px; padding-bottom:10px; display:block;"><b>'+file.name+'</b></span>Data: '+date+'/'+month+'/'+year+'<br>Tamanho: '+tamanho_arredondado+'mb</div>';
+								s+= '<div style="clear:both;"></div>';
+							s+= '</div>';
+						}				
 		
 						$('#offline-conteudo').append(s);
 					});

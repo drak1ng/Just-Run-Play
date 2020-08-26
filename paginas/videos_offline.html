@@ -86,7 +86,7 @@
 				
 				
 				
-				listDir(cordova.file.dataDirectory);
+				listDir(cordova.file.dataDirectory+'files/files');
 		
 				function onSuccessCallback(entries){
 					var html = '';
@@ -157,7 +157,7 @@
 					navigator.notification.confirm('Tem certeza que deseja remover esse arquivo?', onConfirm, 'Remover Arquivo?', 'Sim,Não');
 					function onConfirm(button){
 						if(button==1){
-							window.resolveLocalFileSystemURL(entry, function(fileEntry){ fileEntry.remove(function(){ listDir(cordova.file.dataDirectory); }, function(error){ alert('Erro ao remover arquivo'); }); }); 
+							window.resolveLocalFileSystemURL(entry, function(fileEntry){ fileEntry.remove(function(){ listDir(cordova.file.dataDirectory+'files/files'); }, function(error){ alert('Erro ao remover arquivo'); }); }); 
 						}
 					}
 				}

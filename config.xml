@@ -132,6 +132,8 @@
 	<plugin name="cordova-plugin-fcm" source="npm"/>
 	<!--<plugin name="cordova-plugin-fcm-with-dependecy-updated" source="npm" spec="~4.2.0" />-->
 	
+	<gap:plugin name="cordova-plugin-file-downloader" source="npm" />
+	
 	<platform name="android">
 		<resource-file src="google-services.json" target="app/google-services.json" />
 	</platform>

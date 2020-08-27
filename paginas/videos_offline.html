@@ -83,10 +83,14 @@
 				$('#offline-rodape5').click(function(){ $.mobile.changePage("preferencias.html", { transition: "fade", changeHash: false }); });
 				$('.perfil-topo').click(function(){ $.mobile.changePage("perfil.html", { transition: "fade", changeHash: false }); });
 				
+				if(device.platform=="Android"){
+					var pasta = cordova.file.dataDirectory+'files/files';
+				}else{
+					var pasta = cordova.file.documentsDirectory+'files';
+				}
 				
 				
-				
-				listDir(cordova.file.dataDirectory+'files/files');
+				listDir(pasta);
 		
 				function onSuccessCallback(entries){
 					var html = '';
@@ -159,7 +163,7 @@
 					navigator.notification.confirm('Tem certeza que deseja remover esse arquivo?', onConfirm, 'Remover Arquivo?', 'Sim,Não');
 					function onConfirm(button){
 						if(button==1){
-							window.resolveLocalFileSystemURL(entry, function(fileEntry){ fileEntry.remove(function(){ listDir(cordova.file.dataDirectory+'files/files'); }, function(error){ alert('Erro ao remover arquivo'); }); }); 
+							window.resolveLocalFileSystemURL(entry, function(fileEntry){ fileEntry.remove(function(){ listDir(pasta); }, function(error){ alert('Erro ao remover arquivo'); }); }); 
 						}
 					}
 				}
